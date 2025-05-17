@@ -1,6 +1,6 @@
 // src/components/Dashboard/Charts.js
 import { Line } from "react-chartjs-2";
-import { Chart as ChartJS } from "chart.js/auto";
+
 
 export default function Charts() {
   const data = {

@@ -1,18 +1,20 @@
 // src/components/Auth/Signup.js
-import { useState } from "react";
+import React,{ useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth, db } from "../../firebase"; // Add db to the import
 import { doc, setDoc } from "firebase/firestore"; // Import Firestore methods
 import { useNavigate } from "react-router-dom";
 import GoogleLogin from "./GoogleLogin";
+import "./AuthForm.css";
 
 export default function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [farmName, setFarmName] = useState("");
+  const [error] = useState("");
   const navigate = useNavigate();
 
-  const handleSignup = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
@@ -35,8 +37,8 @@ export default function Signup() {
   // ... rest of your component remains the same ...
 
   return (
-    <div className="auth-container">
-      <div className="auth-card">
+    <div className="auth-form-container">
+      
         <h1>Create Farm Account</h1>
         
         <div className="social-login">
@@ -46,7 +48,7 @@ export default function Signup() {
           </div>
         </div>
 
-        <form onSubmit={handleSignup} className="auth-form">
+        <form className="auth-form" onSubmit={handleSubmit}>
           <div className="form-group">
             <label>Email</label>
             <input
@@ -80,15 +82,15 @@ export default function Signup() {
             />
           </div>
 
-          <button type="submit" className="auth-button">
-            Create Account
-          </button>
+          <button type="submit">Login</button>
+          {error && <div className="error-message">{error}</div>}
         </form>
 
-        <div className="auth-footer">
-          <p>Already have an account? <a href="/login">Log In</a></p>
+        <div className="switch-link">
+            Already have an account? <a href="/login">Log In</a>
         </div>
-      </div>
+      
     </div>
   );
 }
+

@@ -14,7 +14,7 @@ export default function GoogleLogin() {
   return (
     <button onClick={handleLogin} className="google-login-btn">
       <img 
-        src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" 
+        src="https://www.pngmart.com/files/16/Google-Logo-PNG-Image.png" 
         alt="Google logo" 
         width="18"
         height="18"

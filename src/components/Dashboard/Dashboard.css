@@ -1,0 +1,85 @@
+.dashboard-container {
+  max-width: 900px;
+  margin: 40px auto;
+  background: #f8f9fa;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 2rem;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #b7e4c7;
+  padding-bottom: 1rem;
+}
+
+.dashboard-header h1 {
+  font-size: 2rem;
+  color: #2d6a4f;
+}
+
+.logout-btn {
+  background: #d90429;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.logout-btn:hover {
+  background: #a4061d;
+}
+
+.dashboard-content {
+  margin-top: 2rem;
+}
+
+.data-section {
+  margin-bottom: 2rem;
+}
+
+.data-section h2 {
+  color: #1b4332;
+  margin-bottom: 1rem;
+}
+
+.chart-container {
+  background: #b7e4c7;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+.plant-suggestion-link {
+  display: inline-block;
+  margin-top: 1rem;
+  background: #40916c;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.plant-suggestion-link:hover {
+  background: #2d6a4f;
+}
+
+.profile-link {
+  display: inline-block;
+  margin-top: 1rem;
+  background: #40916c;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s;
+}

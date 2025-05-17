@@ -1,16 +1,18 @@
 // src/components/Auth/Login.js
-import { useState } from "react";
+import React,{ useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
 import { useNavigate } from "react-router-dom";
 import GoogleLogin from "./GoogleLogin";
+import "./AuthForm.css";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error] = useState("");
   const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
+  const handleSubmit= async (e) => {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
@@ -21,8 +23,8 @@ export default function Login() {
   };
 
   return (
-    <div className="auth-container">
-      <div className="auth-card">
+   <div className="auth-form-container">
+      
         <h1>Farm Login</h1>
         
         <div className="social-login">
@@ -32,7 +34,7 @@ export default function Login() {
           </div>
         </div>
 
-        <form onSubmit={handleLogin} className="auth-form">
+        <form className="auth-form" onSubmit={handleSubmit}>
           <div className="form-group">
             <label>Email</label>
             <input
@@ -56,16 +58,14 @@ export default function Login() {
             />
           </div>
 
-          <button type="submit" className="auth-button">
-            Login
-          </button>
+          <button type="submit">Login</button>
+          {error && <div className="error-message">{error}</div>}
         </form>
 
-        <div className="auth-footer">
-          <p>Don't have an account? <a href="/signup">Sign Up</a></p>
-          <p><a href="/forgot-password">Forgot password?</a></p>
+        <div className="switch-link">
+          Don't have an account? <a href="/signup">Sign up</a>
         </div>
-      </div>
+      
     </div>
   );
 }

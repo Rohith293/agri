@@ -1,0 +1,30 @@
+.profile-container {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.profile-info {
+  margin: 1.5rem 0;
+  font-size: 1.1rem;
+  color: #2d6a4f;
+}
+
+.logout-btn {
+  background: #d90429;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.logout-btn:hover {
+  background: #a4061d;
+}
